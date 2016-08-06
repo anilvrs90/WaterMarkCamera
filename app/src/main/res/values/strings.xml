@@ -28,8 +28,8 @@
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
     <string name="date_time_req">N</string>
-    <!--<string name="watermark1">VRSoft Systems And Solution Pvt. Ltd.</string>-->
-    <!--<string name="watermark2">Siddarth Birthday</string>-->
+    <string name="watermark1">VRSoft Systems And Solution Pvt. Ltd.</string>
+    <string name="watermark2">VRS</string>
 
     <!-- Fragment section titles -->
     <string name="title_section1">Take Photo Watermark</string>
