@@ -11,3 +11,7 @@ https://www.airpair.com/android/android-camera-development
 for a wonderful Android Camera Guide, Most of the code is reused in this project you can refer to his git repo at,
 
 https://github.com/rexstjohn/UltimateAndroidCameraGuide
+
+License:
+
+http://www.gnu.org/licenses/gpl-3.0.txt
