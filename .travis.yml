@@ -1,0 +1,22 @@
+language: android
+android:
+  components:
+    #Build Tools
+    - tools
+    - platform-tools
+    - build-tools-24.0.1
+    #SDK Versions
+    - android-21
+    - android-22
+    - android-23
+    #Additional Components
+    - extra-google-m2repository
+    - extra-google-google_play_services
+    - extra-android-support
+    
+before_script:
+    - chmod +x gradlew && ./gradlew dependencies 
+
+script:
+    - chmod +x gradlew && ./gradlew clean assembleDebug -PdisablePreDex
+
