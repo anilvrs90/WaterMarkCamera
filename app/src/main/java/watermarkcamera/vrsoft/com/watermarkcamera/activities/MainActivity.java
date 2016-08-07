@@ -49,7 +49,7 @@ import watermarkcamera.vrsoft.com.watermarkcamera.fragments.SimplePhotoGalleryLi
 
 /**
  * Created by Rex St. John (on behalf of AirPair.com) on 3/4/14.
- * Modified BY Anil Nair (on behalf of VRSoft Systems and Solutions Pvt. Ltd. on 01/08/2016
+ * Modified by Anil Nair (on behalf of VRSoft Systems and Solutions Pvt. Ltd. on 01/08/2016
  */
 public class MainActivity extends CameraActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks, BaseFragment.OnFragmentInteractionListener {
@@ -65,9 +65,12 @@ public class MainActivity extends CameraActivity
     public static final int SIMPLE_CAMERA_INTENT_FRAGMENT = 0;
     public static final int SIMPLE_PHOTO_GALLERY_FRAGMENT = 1;
     public static final int SIMPLE_PHOTO_PICKER_FRAGMENT = 2;
-    //    public static final int NATIVE_CAMERA_FRAGMENT = 3;
-//    public static final int HORIZONTAL_GALLERY_FRAGMENT = 3;
-    //Permissions
+    //public static final int NATIVE_CAMERA_FRAGMENT = 3;
+    //public static final int HORIZONTAL_GALLERY_FRAGMENT = 3;
+
+    /**
+     * Runtime Permissions Tag
+     */
     private static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -93,7 +96,7 @@ public class MainActivity extends CameraActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
-        // Check for permissions
+        // Check for permissions in Android 6.0
         if (requestCamPermission()) {
             Toast.makeText(this, "Permissions Granted", Toast.LENGTH_SHORT).show();
         } else {
@@ -211,13 +214,9 @@ public class MainActivity extends CameraActivity
     @Override
     public void onFragmentInteraction(int actionId) {
 
-        if (actionId == SELECT_PHOTO_ACTION) {
-            Toast.makeText(this, "inside fragment interaction", Toast.LENGTH_SHORT).show();
-        }
-
     }
 
-    // Permission Issues on Android MarchMellow (6.0)
+    // Permission Issues on Android (6.0)
     // On subsequent installations the permissions are reset and must be modifed manually
     private boolean requestCamPermission() {
         int cameraPermission = ContextCompat.checkSelfPermission(this,
