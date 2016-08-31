@@ -99,6 +99,7 @@ public class MainActivity extends CameraActivity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
          Rollbar.init(this, "8fc9baec67524b9d99669fae8354f017", "debug");
+         Rollbar.reportMessage("A test message","debug");
         // Check for permissions in Android 6.0
         if (requestCamPermission()) {
             Toast.makeText(this, "Permissions Granted", Toast.LENGTH_SHORT).show();
