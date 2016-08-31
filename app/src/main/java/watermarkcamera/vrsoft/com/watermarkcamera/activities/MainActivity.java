@@ -47,6 +47,8 @@ import watermarkcamera.vrsoft.com.watermarkcamera.fragments.SimpleAndroidImagePi
 import watermarkcamera.vrsoft.com.watermarkcamera.fragments.SimpleCameraIntentFragment;
 import watermarkcamera.vrsoft.com.watermarkcamera.fragments.SimplePhotoGalleryListFragment;
 
+import com.rollbar.android.*;
+
 /**
  * Created by Rex St. John (on behalf of AirPair.com) on 3/4/14.
  * Modified by Anil Nair (on behalf of VRSoft Systems and Solutions Pvt. Ltd. on 01/08/2016
@@ -96,6 +98,7 @@ public class MainActivity extends CameraActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
+         Rollbar.init(this, "8fc9baec67524b9d99669fae8354f017", "debug");
         // Check for permissions in Android 6.0
         if (requestCamPermission()) {
             Toast.makeText(this, "Permissions Granted", Toast.LENGTH_SHORT).show();

@@ -43,6 +43,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.rollbar.android.Rollbar;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -83,7 +85,8 @@ public class SimpleCameraIntentFragment extends BaseFragment implements Button.O
     /**
      * Static factory method
      *
-     * @param sectionNumber
+     * @param sectionNumber ,
+     * @param permission
      * @return
      */
     public static SimpleCameraIntentFragment newInstance(int sectionNumber, boolean permission) {
@@ -162,6 +165,7 @@ public class SimpleCameraIntentFragment extends BaseFragment implements Button.O
             } catch (IOException ex) {
                 // Error occurred while creating the File
                 Toast toast = Toast.makeText(activity, "There was a problem saving the photo...", Toast.LENGTH_SHORT);
+                Rollbar.reportException(ex, "critical", "Cannot Save Photo");
                 toast.show();
             }
             // Continue only if the File was successfully created
@@ -285,7 +289,7 @@ public class SimpleCameraIntentFragment extends BaseFragment implements Button.O
             FileOutputStream fos = new FileOutputStream(new File(imagePath));
             bitmapwatermark.compress(Bitmap.CompressFormat.JPEG, 80, fos);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            Rollbar.reportException(e, "critical", "Cannot Save the Photograph ");
         }
 
     }
