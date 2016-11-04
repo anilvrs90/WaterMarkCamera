@@ -1,4 +1,6 @@
 language: android
+addons:
+    srcclr: true
 android:
   components:
     #Build Tools
