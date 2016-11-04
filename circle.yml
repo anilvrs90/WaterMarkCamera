@@ -12,4 +12,4 @@ test:
     - chmod +x gradlew
     - ./gradlew clean assembleDebug -PdisablePreDex
   post:
-    - curl -sSL https://download.sourceclear.com/ci.sh | sh
+    - curl -sSL https://download.sourceclear.com/ci.sh | bash
