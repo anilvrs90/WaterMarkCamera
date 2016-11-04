@@ -11,3 +11,5 @@ test:
   override:
     - chmod +x gradlew
     - ./gradlew clean assembleDebug -PdisablePreDex
+  post:
+    - curl -sSL https://download.sourceclear.com/ci.sh | sh
